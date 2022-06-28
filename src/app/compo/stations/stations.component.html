@@ -1,0 +1,145 @@
+<!--
+<ul>
+    <li *ngFor="let station of stations$ | async">
+
+        <a routerLinkActive="active" [routerLink]=" ['/stations',station.name]"></a>
+    </li>
+</ul>
+
+<router-outlet></router-outlet>
+
+
+    Se connecter a l'api via le service ici
+    ng dois recuperer les post depuis le service
+
+
+  "$id": "1",
+  "$values": [
+    {
+      "$id": "2",
+      "id": "51846817-366a-4876-84e2-91d9e987f707",
+      "city": "Livron-sur-drome",
+      "isActive": true,
+      "installationDate": "2022-06-12T17:14:33.745Z",
+      "latitude": 59.4,
+      "longitude": 41.12,
+      "name": "Radio",
+      "operatingStateDate": "0001-01-01T00:00:00",
+      "updateDate": "0001-01-01T00:00:00",
+      "firmwareVersion": "1.0.3"
+    },
+    {
+      "$id": "3",
+      "id": "5bdf3d60-9b8a-4b34-b638-31f364aef97f",
+      "city": "Marseille",
+      "isActive": true,
+      "installationDate": "2022-06-22T20:29:51.915Z",
+      "latitude": 59.4,
+      "longitude": 41.12,
+      "name": "Cardiac frequency v3",
+      "operatingStateDate": "0001-01-01T00:00:00",
+      "updateDate": "0001-01-01T00:00:00",
+      "firmwareVersion": "1.0.3"
+    },
+    {
+      "$id": "4",
+      "id": "61dbd654-9399-4e80-a270-d3b9aa04212b",
+      "city": "Voiron",
+      "isActive": true,
+      "installationDate": "2021-10-12T06:21:32.789Z",
+      "latitude": 45.36395,
+      "longitude": 5.59209,
+      "name": "Weather",
+      "operatingStateDate": "0001-01-01T00:00:00",
+      "updateDate": "0001-01-01T00:00:00",
+      "firmwareVersion": "1.0.1"
+    },
+    {
+      "$id": "5",
+      "id": "66d61b5e-0984-4362-a6ba-6033c67df46c",
+      "city": "Valence",
+      "isActive": true,
+      "installationDate": "2022-06-12T09:09:46.498Z",
+      "latitude": 55.4,
+      "longitude": 61.12,
+      "name": "Cardiac frequency",
+      "operatingStateDate": "0001-01-01T00:00:00",
+      "updateDate": "0001-01-01T00:00:00",
+      "firmwareVersion": "1.0.3"
+    },
+    {
+      "$id": "6",
+      "id": "b56acc90-7b8b-4c12-a981-796e92a67dda",
+      "city": "Livron-sur-drome",
+      "isActive": true,
+      "installationDate": "2022-06-12T09:09:46.498Z",
+      "latitude": 59.4,
+      "longitude": 41.12,
+      "name": "Cardiac frequency v2",
+      "operatingStateDate": "0001-01-01T00:00:00",
+      "updateDate": "0001-01-01T00:00:00",
+      "firmwareVersion": "1.0.3"
+    },
+    {
+      "$id": "7",
+      "id": "cda18a6a-9af5-472f-bb98-e57b53c8e45f",
+      "city": "Voiron",
+      "isActive": true,
+      "installationDate": "2020-03-23T06:21:32.789Z",
+      "latitude": 45.36395,
+      "longitude": 5.59209,
+      "name": "Air quality",
+      "operatingStateDate": "0001-01-01T00:00:00",
+      "updateDate": "0001-01-01T00:00:00",
+      "firmwareVersion": "1.0.0"
+    },
+    {
+      "$id": "8",
+      "id": "dd7373fa-cac9-4f96-9cf6-614b4f1dfd68",
+      "city": "Voiron",
+      "isActive": false,
+      "installationDate": "2022-05-23T06:21:32.789Z",
+      "latitude": 45.36395,
+      "longitude": 5.59209,
+      "name": "Train frequency",
+      "operatingStateDate": "0001-01-01T00:00:00",
+      "updateDate": "0001-01-01T00:00:00",
+      "firmwareVersion": "0.1.0"
+    },
+    {
+      "$id": "9",
+      "id": "e499c6dd-2a94-4996-ad33-5f61b1ceb899",
+      "city": "Grenoble",
+      "isActive": true,
+      "installationDate": "2019-09-08T19:01:08.948Z",
+      "latitude": 45.16667,
+      "longitude": 5.71667,
+      "name": "UV",
+      "operatingStateDate": "0001-01-01T00:00:00",
+      "updateDate": "0001-01-01T00:00:00",
+      "firmwareVersion": "1.0.0"
+    }
+  ]
+}
+}
+-->
+<p>station works!</p>
+<hr/>
+
+
+<table>
+    <tr *ngFor="let s of listStation " (click)="onSelect(s)">
+
+        <td><a [routerLink]="['/stations',s.name]"> {{s.name}} </a></td>
+        <td>{{s.city}} | </td>
+        <td>{{s.latitude}} | </td>
+        <td>{{s.longitude}} | </td>
+        <td>{{s.firmwareVersion}} | </td>
+        <td>{{s.installationDate}} | </td>
+        <td>{{s.operatingStateDate}} | </td>
+        <td>{{s.isActive}}</td>
+    </tr>
+</table>
+
+<app-station-detail [station]="selectedStation"></app-station-detail>
+  <router-outlet></router-outlet>

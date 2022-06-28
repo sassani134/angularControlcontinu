@@ -1,0 +1,9 @@
+<div>
+
+    <p *ngIf="station; else noStation">La station {{station.name}}</p>
+    <ng-template #noStation>
+        <p>Pas de station sélectionnée</p>
+    </ng-template>
+
+
+</div>

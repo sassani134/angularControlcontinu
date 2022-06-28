@@ -1,0 +1,7 @@
+ng g c compo/home
+ng g c compo/station
+ng g c compo/station-detail
+
+ng g c error
+ng g guard logged
+ng g s services/feedApi
